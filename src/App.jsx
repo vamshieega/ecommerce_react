@@ -4,7 +4,6 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductList from "./pages/ProductList";
 import Product from "./pages/Product";
-import Pay from "./pages/Pay";
 
 import {
   BrowserRouter as Router,
