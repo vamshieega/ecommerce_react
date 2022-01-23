@@ -10,7 +10,8 @@ import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router-dom";
 
-const KEY = 'pk_test_51KKbn7AJyFQljqNeL5q9FXjDIWFV03TDwD1NCsrkpu548XxJiBfP7Ivbx579BDDp9wpB6eu9ANDzxkVnt1lci9gz00IeFTrXaZ';
+const KEY =
+  "pk_test_51KKbn7AJyFQljqNeL5q9FXjDIWFV03TDwD1NCsrkpu548XxJiBfP7Ivbx579BDDp9wpB6eu9ANDzxkVnt1lci9gz00IeFTrXaZ";
 
 const Container = styled.div``;
 
@@ -151,13 +152,13 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
-`;
+// const Button = styled.button`
+//   width: 100%;
+//   padding: 10px;
+//   background-color: black;
+//   color: white;
+//   font-weight: 600;
+// `;
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);

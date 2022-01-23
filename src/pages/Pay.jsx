@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
-import Stripe from "./Stripe";
 
 const KEY =
   "pk_test_51KEbRkSCeUnpNNi2G23lU7VjCow082poarm0bbemGT9wglleydGwnllK2369LdpOkTJ0wJzNgADuPbqqHtjHfnXG009ez59ZCE";
