@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { mobile } from "../responsive";
 import { useLocation } from "react-router";
 import { useState } from "react";
+import GoToTop from './GoToTop';
 
 const Container = styled.div``;
 
@@ -90,6 +91,7 @@ const ProductList = () => {
       <Products cat={cat} filters={filters} sort={sort} />
       <Newsletter />
       <Footer />
+      <GoToTop/>
     </Container>
   );
 };

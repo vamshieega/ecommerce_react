@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {mobile} from "../responsive";
+import { mobile } from "../responsive";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -54,10 +54,11 @@ const Register = () => {
       <Wrapper>
         <Title>Create An Account</Title>
         <Form>
-          <Input placeholder="name" />
+          <Input placeholder="first name" />
           <Input placeholder="last name" />
-          <Input placeholder="username" />
+          <Input placeholder="mobile number" />
           <Input placeholder="email" />
+          <Input placeholder="username" />
           <Input placeholder="password" />
           <Input placeholder="confirm password" />
           <Aggrement>

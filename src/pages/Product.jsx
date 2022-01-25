@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import { publicRequest } from "../requestMethods";
 import { addProduct } from "../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import GoToTop from './GoToTop';
+
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -193,6 +195,7 @@ const Product = () => {
       </Wrapper>
       <Newsletter />
       <Footer />
+      <GoToTop/>
     </Container>
   );
 };

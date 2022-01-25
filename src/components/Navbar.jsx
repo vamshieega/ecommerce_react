@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../redux/userRedux";
 import { logoutUserCart } from "../redux/cartRedux";
+import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -77,11 +78,13 @@ const Navbar = () => {
 
   const user = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
     console.log("logout");
     dispatch(logoutUser({}));
     dispatch(logoutUserCart({}));
+    history.push("/");
   };
 
   return (
@@ -102,7 +105,9 @@ const Navbar = () => {
             <MenuItem onClick={handleClick}>Logout </MenuItem>
           ) : (
             <>
-              <MenuItem>REGISTER</MenuItem>
+             <Link to="/register">
+                <MenuItem>REGISTER </MenuItem>
+              </Link>
               <Link to="/login">
                 <MenuItem>SIGN IN </MenuItem>
               </Link>
