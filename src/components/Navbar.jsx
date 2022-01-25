@@ -106,7 +106,7 @@ const Navbar = () => {
           ) : (
             <>
              <Link to="/register">
-                <MenuItem>REGISTER </MenuItem>
+                <MenuItem>REGISTER test </MenuItem>
               </Link>
               <Link to="/login">
                 <MenuItem>SIGN IN </MenuItem>
