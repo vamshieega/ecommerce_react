@@ -1,76 +1,49 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { mobile } from "../responsive";
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-      center;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+import "./Register.css";
 
-const Wrapper = styled.div`
-  padding: 20px;
-  width: 40%;
-  background-color: white;
-  ${mobile({ width: "75%" })}
-`;
-const Title = styled.h1`
-  font-style: 24px;
-  font-weight: 300;
-`;
-const Form = styled.form`
-  display: flex;
-  flex-wrap: wrap;
-`;
-const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 20px 10px 0px 0px;
-  padding: 10px;
-`;
-const Aggrement = styled.span`
+const Label = styled.label`
   font-size: 12px;
-  margin: 20px 0px;
-`;
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
+  color: gray;
 `;
 
-const Register = () => {
+const Span = styled.span`
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+`;
+const FormInput = (props) => {
+  const [focused, setFocused] = useState(false);
+  const { label, errorMessage, onChange, id, ...inputProps } = props;
+
+  const handleFocus = (e) => {
+    console.log(e);
+    setFocused(true);
+  };
+
   return (
-    <Container>
-      <Wrapper>
-        <Title>Create An Account</Title>
-        <Form>
-          <Input placeholder="first name" />
-          <Input placeholder="last name" />
-          <Input placeholder="mobile number" />
-          <Input placeholder="email" />
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Aggrement>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
-            autem.
-            <b>PRIVACY policy</b>
-          </Aggrement>
-          <Button>Create</Button>
-        </Form>
-      </Wrapper>
+    <Container className="formInput">
+      <Label>{label}</Label>
+      <input
+        className="inputField"
+        {...inputProps}
+        onChange={onChange}
+        onBlur={handleFocus}
+        onFocus={() =>
+          inputProps.name === "confirmPassword" && setFocused(true)
+        }
+        focused={focused.toString()}
+      />
+      <Span>{errorMessage}</Span>
     </Container>
   );
 };
 
-export default Register;
+export default FormInput;

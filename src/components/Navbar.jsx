@@ -105,7 +105,7 @@ const Navbar = () => {
             <MenuItem onClick={handleClick}>Logout </MenuItem>
           ) : (
             <>
-             <Link to="/register">
+              <Link to="/register">
                 <MenuItem>REGISTER </MenuItem>
               </Link>
               <Link to="/login">
